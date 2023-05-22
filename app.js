@@ -4,7 +4,6 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 import bodyParser from "body-parser";
 import dotenv from "dotenv";
-import path from "path";
 import expressLayouts from "express-ejs-layouts";
 
 // Importation des Routes
@@ -18,6 +17,7 @@ const corsOptions = {
   credentials: true,
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
 };
+
 const PORT = process.env.PORT || 3000;
 
 // Initialisation de l'app

@@ -5,7 +5,7 @@
 
   /* Colors */
   --color-red: #e50914;
-  --color-black: #0f1118;
+  --color-black: #14181C;
   --color-dark-blue: #090626;
   --color-white: white;
   --color-dark-red: #C11119;
@@ -13,35 +13,26 @@
   /* Theme */
   --primary: var(--color-black);
   --secondary: var(--color-red);
-  --secondary-hover : var(--color-dark-red);
+  --secondary-hover: var(--color-dark-red);
   --text: var(--color-white);
 }
 
 /*********************** Default **************************/
 /* All */
 *::selection {
-    color: var(--text);
-    background-color: var(--secondary);
+  color: var(--text);
+  background-color: var(--secondary);
 }
 
 /* Body */
-/* body {
-  background-image: linear-gradient(
-      0deg,
-      rgba(0, 8, 29, 0.7),
-      rgba(0, 8, 29, 0.7)
-    ),
-    url(https://assets.nflxext.com/ffe/siteui/vlv3/51e53f54-0d9f-40ec-9e05-c030def06ac9/d6a9ae20-be94-40a8-80d6-5ec3732aa408/FR-fr-20230515-popsignuptwoweeks-perspective_alpha_website_large.jpg);
-  color: var(--text);
-} */
 body {
-    background-color: var(--primary);
-    color: var(--text);
+  background-color: var(--primary);
+  color: var(--text);
 }
 
 /* Heading */
 h2 {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 /* Links */
@@ -56,25 +47,107 @@ a:hover {
 
 /* Buttons */
 .btn-secondary {
-    background-color: var(--secondary);
-    border: none;
+  background-color: var(--secondary);
+  border: none;
 }
+
 .btn-secondary:hover {
-    background-color: var(--secondary-hover);
+  background-color: var(--secondary-hover);
 }
 
 .btn-outline-secondary {
-    border-color: var(--secondary);
-    color: var(--secondary);
+  border-color: var(--secondary);
+  color: var(--secondary);
 }
 
 .btn-outline-secondary:hover {
-    background-color: var(--secondary-hover);
-    color: var(--text);
-    border-color: var(--secondary-hover);
+  background-color: var(--secondary-hover);
+  color: var(--text);
+  border-color: var(--secondary-hover);
 }
 
 /* Container */
 .container {
-    width: 1080px;
+  width: 1080px;
+}
+
+/* 
+---------------------------------
+Header
+---------------------------------
+*/
+header {
+  height: 72px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 19999;
+}
+
+header:hover {
+  background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(20,24,28,0.8015406846332283) 100%);
+}
+
+header .container {
+  width: 1000px;
+}
+
+header li a {
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+}
+
+/* 
+---------------------------------
+Index
+---------------------------------
+*/
+/* Hero */
+#hero .backdrop-container {
+  height: 675px;
+  background-position: center -96px;
+  background-image: url("https://a.ltrbxd.com/resized/sm/upload/tx/hy/xj/lw/sanctuary-2023-1200-1200-675-675-crop-000000.jpg?v=b1d98010cd");
+  background-repeat: no-repeat;
+}
+
+#hero .backdrop-wrapper {
+  padding-top: 500px;
+  position: relative;
+}
+
+#hero .backdrop-wrapper::before {
+  background-image: linear-gradient(90deg, #14181d 0, rgba(20, 24, 29, .986) .97%, rgba(20, 24, 29, .945) 2.07833333%, rgba(20, 24, 29, .883) 3.29666667%, rgba(20, 24, 29, .803) 4.60166667%, rgba(20, 24, 29, .711) 5.96666667%, rgba(20, 24, 29, .61) 7.365%, rgba(20, 24, 29, .504) 8.77166667%, rgba(20, 24, 29, .398) 10.16%, rgba(20, 24, 29, .296) 11.505%, rgba(20, 24, 29, .203) 12.78%, rgba(20, 24, 29, .122) 13.95833333%, rgba(20, 24, 29, .059) 15.01666667%, rgba(20, 24, 29, .016) 15.92833333%, rgba(20, 24, 29, 0) 16.66666667%, rgba(20, 24, 29, 0) 83.33333333%, rgba(20, 24, 29, .016) 84.07166667%, rgba(20, 24, 29, .059) 84.98333333%, rgba(20, 24, 29, .122) 86.04166667%, rgba(20, 24, 29, .203) 87.22%, rgba(20, 24, 29, .296) 88.495%, rgba(20, 24, 29, .398) 89.84%, rgba(20, 24, 29, .504) 91.22833333%, rgba(20, 24, 29, .61) 92.635%, rgba(20, 24, 29, .711) 94.03333333%, rgba(20, 24, 29, .803) 95.39833333%, rgba(20, 24, 29, .883) 96.70333333%, rgba(20, 24, 29, .945) 97.92166667%, rgba(20, 24, 29, .986) 99.03%, #14181d), linear-gradient(0deg, #14181d 0, #14181d 21.48148148%, rgba(20, 24, 29, .986) 23.63703704%, rgba(20, 24, 29, .945) 26.1%, rgba(20, 24, 29, .883) 28.80740741%, rgba(20, 24, 29, .803) 31.70740741%, rgba(20, 24, 29, .711) 34.74074074%, rgba(20, 24, 29, .61) 37.84814815%, rgba(20, 24, 29, .504) 40.97407407%, rgba(20, 24, 29, .398) 44.05925926%, rgba(20, 24, 29, .296) 47.04814815%, rgba(20, 24, 29, .203) 49.88148148%, rgba(20, 24, 29, .122) 52.5%, rgba(20, 24, 29, .059) 54.85185185%, rgba(20, 24, 29, .016) 56.87777778%, rgba(20, 24, 29, 0) 58.51851852%);
+  background-repeat: no-repeat;
+  content: "";
+  display: block;
+  height: 675px;
+  left: 50%;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  width: 1080px;
+  z-index: 0;
+}
+
+#hero .hero-text {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  transform: translate(0, -20%);
+}
+
+#hero h2 {
+  font-weight: bolder;
+  line-height: 1.33333333;
+}
+
+#hero button {
+  margin: 20px 0;
+}
+
+#hero i {
+  font-size: 2rem;
+  transform: translate(0, 50%);
 }

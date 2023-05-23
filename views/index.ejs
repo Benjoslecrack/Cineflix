@@ -26,7 +26,7 @@
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body p-5 pt-0">
-          <form>
+          <form method="POST" action="/auth/register">
             <div class="form-floating mb-3">
               <input type="email" class="form-control rounded-3" id="email" placeholder="nom@exemple.fr">
               <label for="email">Adresse Mail</label>
@@ -40,7 +40,7 @@
               <label for="username">Nom d'utilisateur</label>
             </div>
             <button class="w-100 mb-2 btn btn-lg rounded-3 btn-secondary" type="submit">S'inscrire</button>
-            <small class="">En cliquant sur "S'inscrire", vous acceptez les <a class="text-decoration-underline" href="#">Termes Généraux de la plateforme.</a></small>
+            <small class="">En cliquant sur "S'inscrire", vous acceptez les <a class="text-decoration-underline" href="#">Termes Généraux.</a></small>
             <hr class="my-4">
             <h2 class="fs-5 fw-bold mb-3">Ou utilisez une autre méthode</h2>
             <button class="w-100 py-2 mb-2 btn btn-outline-secondary rounded-3" type="submit">

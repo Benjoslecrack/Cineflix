@@ -6,6 +6,8 @@ import bodyParser from "body-parser";
 import dotenv from "dotenv";
 import expressLayouts from "express-ejs-layouts";
 import mysql from "mysql2";
+import morgan from "morgan";
+// import helmet from "helmet";
 import path from "path";
 
 // Importation des Routes
@@ -32,10 +34,12 @@ const PORT = process.env.PORT || 3000;
 const app = express();
 app.use(cors(corsOptions));
 app.use(cookieParser());
-app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.use(expressLayouts);
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(morgan("dev"));
+// app.use(helmet());
 
 // Moteur de Rendu
 app.set("layout", "./layouts/main");
@@ -43,7 +47,7 @@ app.set("view engine", "ejs");
 
 // Port d'écoute
 app.listen(PORT, () =>
-  console.log(`Connecté avec le Port ${PORT}`)
+  console.log(`Connecté: http://localhost:${PORT}`)
 );
 
 // Redirection de public sur uploads
@@ -58,7 +62,7 @@ app.use((err, req, res, next) => {
   res.status(500).send(`${err.message}`);
 });
 connection.connect((error) => {
-  if(error) {
+  if (error) {
     console.log(error)
   } else {
     console.log("La Base de données est connectée");

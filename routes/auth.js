@@ -2,13 +2,13 @@
 import express from "express";
 const router = express.Router();
 
+// Imports des fonctions
+import { register } from "../controllers/auth.js";
+
 /**
  * Route POST
  * Inscription
  */
-router.post("/register", (req, res) => {
-    console.log("Coucou");
-    res.redirect('/');
-})
+router.post("/register", register);
 
 export default router;

@@ -1,4 +1,9 @@
+// Imports
 import { Sequelize } from "sequelize";
+import dotenv from "dotenv";
+
+// Configs
+dotenv.config({ path: './.env' });
 
 const sequelize = new Sequelize(
   process.env.DB_DATABASE,
@@ -10,14 +15,16 @@ const sequelize = new Sequelize(
   }
 );
 
+// Créer la table si elle n'existe pas
 sequelize.sync();
 
+// Test la connection à la BDD
 (async () => {
   try {
     await sequelize.authenticate();
-    console.log("Connection has been established successfully.");
+    console.log("La connection à la BDD à bien été établie.");
   } catch (error) {
-    console.error("Unable to connect to the database:", error);
+    console.error("Impossible de se connecter à la BDD:", error);
   }
 })();
 

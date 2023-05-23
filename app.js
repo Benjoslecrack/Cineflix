@@ -61,10 +61,3 @@ app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).send(`${err.message}`);
 });
-connection.connect((error) => {
-  if (error) {
-    console.log(error)
-  } else {
-    console.log("La Base de données est connectée");
-  }
-})

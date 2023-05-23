@@ -28,15 +28,15 @@
         <div class="modal-body p-5 pt-0">
           <form method="POST" action="/auth/register">
             <div class="form-floating mb-3">
-              <input type="email" class="form-control rounded-3" id="email" placeholder="nom@exemple.fr">
+              <input type="email" class="form-control rounded-3" id="email" name="email" placeholder="nom@exemple.fr">
               <label for="email">Adresse Mail</label>
             </div>
             <div class="form-floating mb-3">
-              <input type="password" class="form-control rounded-3" id="password" placeholder="Votre mot de passe">
+              <input type="password" class="form-control rounded-3" id="password" name="password" placeholder="Votre mot de passe">
               <label for="password">Mot de Passe</label>
             </div>
             <div class="form-floating mb-3">
-              <input type="text" class="form-control rounded-3" id="username" placeholder="Votre mot de passe">
+              <input type="text" class="form-control rounded-3" id="username" name="username" placeholder="Votre mot de passe">
               <label for="username">Nom d'utilisateur</label>
             </div>
             <button class="w-100 mb-2 btn btn-lg rounded-3 btn-secondary" type="submit">S'inscrire</button>

@@ -7,6 +7,7 @@ import { getHomePage } from "../controllers/index.js";
 
 // Imports Routes
 import authRoute from "./auth.js";
+import filmsRoute from "./films.js";
 
 /////////////////////////////////// ROUTES
 
@@ -18,6 +19,7 @@ router.get("/", getHomePage);
 
 // Utilisation des routes
 router.use("/auth", authRoute);
+router.use("/films", filmsRoute);
 
 
 // Export

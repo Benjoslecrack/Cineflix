@@ -1,0 +1,57 @@
+<main
+  class="w-100 d-flex justify-content-center align-items-center"
+  style="height: 100vh"
+>
+  <div class="rounded-4 shadow">
+    <div class="p-5 pb-4 border-bottom-0">
+      <h3 class="fw-bold mb-0">Connectez-vous!</h3>
+      <small>Pour accéder à l'ensemble du contenu CinéFlix</small>
+    </div>
+    <div class="modal-body p-5 pt-0">
+      <form method="POST" action="/auth/login">
+        <div class="form-floating mb-3">
+          <input
+            type="email"
+            class="form-control rounded-3"
+            id="email"
+            name="email"
+            placeholder="nom@exemple.fr"
+          />
+          <label for="email">Adresse Mail</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input
+            type="password"
+            class="form-control rounded-3"
+            id="password"
+            name="password"
+            placeholder="Votre mot de passe"
+          />
+          <label for="password">Mot de Passe</label>
+        </div>
+        <button
+          class="w-100 mb-2 btn btn-lg rounded-3 btn-secondary"
+          type="submit"
+        >
+          Se connecter
+        </button>
+        <hr class="my-4" />
+        <h2 class="fs-5 fw-bold mb-3">Ou utilisez une autre méthode</h2>
+        <button
+          class="w-100 py-2 mb-2 btn btn-outline-secondary rounded-3"
+          type="submit"
+        >
+          <i class="bi bi-twitter"></i>
+          Se connecter avec Twitter
+        </button>
+        <button
+          class="w-100 py-2 mb-2 btn btn-outline-primary rounded-3"
+          type="submit"
+        >
+          <i class="bi bi-facebook"></i>
+          Se connecter avec Facebook
+        </button>
+      </form>
+    </div>
+  </div>
+</main>

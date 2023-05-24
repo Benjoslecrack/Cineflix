@@ -5,13 +5,11 @@ import cookieParser from "cookie-parser";
 import bodyParser from "body-parser";
 import dotenv from "dotenv";
 import expressLayouts from "express-ejs-layouts";
-import mysql from "mysql2";
 import morgan from "morgan";
 // import helmet from "helmet";
-import path from "path";
-
-// Importation des Routes
-import indexRouter from "./routes/index.js";
+import session from "express-session";
+import passport from "passport";
+import "./auth/passport.js";
 
 // Configs
 dotenv.config({ path: './.env' });
@@ -21,14 +19,10 @@ const corsOptions = {
   credentials: true,
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
 };
-const connection = mysql.createConnection({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_DATABASE
-});
-
 const PORT = process.env.PORT || 3000;
+
+// Importation des Routes
+import indexRouter from "./routes/index.js";
 
 // Initialisation de l'app
 const app = express();
@@ -39,6 +33,24 @@ app.use(expressLayouts);
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(morgan("dev"));
+app.use(session({
+  secret: process.env.SECRET_KEY,
+  resave: false,
+  saveUninitialized: false,
+  cookie : {
+    maxAge : 1000 * 60 * 60 * 24 * 7,
+    secure : false
+  }
+}))
+// test
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.use(async(req, res, next) => {
+  console.log("SESSION : ", req.session);
+  next();
+})
+
 // app.use(helmet());
 
 // Moteur de Rendu
